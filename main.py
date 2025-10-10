@@ -13,11 +13,16 @@
 #     if c == 1:
 #         print("You didn't guess right, the right number was", a)
 #         break
-import math
-a = int(input('Введіть 5-ти значне число: '))
-reversed_num = int(str(a)[::-1])
-b = len(str(a))
-if b == 5:
-    print(reversed_num)
-else:
-    print("Not a 5 digit number.")
+# import math
+# a = int(input('Введіть 5-ти значне число: '))
+# reversed_num = int(str(a)[::-1])
+# b = len(str(a))
+# if b == 5:
+#     print(reversed_num)
+# else:
+#     print("Not a 5 digit number.")
+def myfunc(n):
+  return abs(n-50)
+thislist1 = [100, 50, 65, 82, 23]
+thislist1.sort(key = myfunc)
+print(thislist1)
