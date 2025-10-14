@@ -10,9 +10,7 @@ elif operator == "-":
 elif operator == "*":
     result = first_num * second_num
     print(result)
-elif operator == "/":
-    result = first_num / second_num
-    print(result)
+
 elif operator == "//":
     result = first_num // second_num
     print(result)
@@ -22,7 +20,11 @@ elif operator == "**":
 elif operator == "%":
     result = first_num % second_num
     print(result)
-elif second_num == 0:
-    print("Please enter a number greater than zero")
+elif operator == "/":
+    if second_num == 0:
+        print("Enter a number greater than 0")
+    else:
+        result = first_num / second_num
+        print(result)
 else:
     print("Invalid operator")
