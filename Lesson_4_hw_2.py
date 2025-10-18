@@ -4,5 +4,5 @@ lastItem = list1[-1] #6
 answear = 0
 for index,x in enumerate(list1):
     if index%2 ==0:
-        answear += x*lastItem
-print(answear)
+        answear += x
+print(answear*lastItem)
