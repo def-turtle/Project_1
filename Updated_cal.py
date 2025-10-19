@@ -1,46 +1,33 @@
+while True:
+    first_num = input("Enter the first number: ")
+    operator = input("Enter the operator (+, -, *, /): ")
+    second_num = input("Enter the second number: ")
 
-list_1 = [0]
-for i in list_1:
-    first_num = int(input("Enter the first number: "))
-    operator = input("Enter the operator: ")
-    second_num = int(input("Enter the second number: "))
-    first_type = type(first_num)
-    second_type = type(second_num)
-    if first_type!= int:
-        print("First number must be an integer")
-        first_num = int(input("Enter the first number: "))
-    elif second_type!= int:
-        print("Second number must be an integer")
-        second_num = int(input("Enter the second number: "))
-    elif operator == "+":
-        result = first_num + second_num
-        print(result)
-    elif operator == "-":
-        result = first_num - second_num
-        print(result)
-    elif operator == "*":
-        result = first_num * second_num
-        print(result)
+    if first_num.isdigit() and second_num.isdigit():
+        first_num = int(first_num)
+        second_num = int(second_num)
 
-    elif operator == "//":
-        result = first_num // second_num
-        print(result)
-    elif operator == "**":
-        result = first_num ** second_num
-        print(result)
-    elif operator == "%":
-        result = first_num % second_num
-        print(result)
-    elif operator == "/":
-        if second_num == 0:
-            print("Enter a number greater than 0")
-        else:
+        if operator == "+":
+            result = first_num + second_num
+        elif operator == "-":
+            result = first_num - second_num
+        elif operator == "*":
+            result = first_num * second_num
+        elif operator == "/":
+            if second_num == 0:
+                print("Cannot divide by zero!")
+                continue
             result = first_num / second_num
-            print(result)
+        else:
+            print("Invalid operator!")
+            continue
+
+        print(f"Result: {result}")
     else:
-        print("Invalid operator")
-    a = input("Do you want to continue? yes or no: ")
-    if a == "yes":
-        list_1.append('1')
-    else:
+        print("Please enter valid numbers!")
+        continue
+
+    choice = input("Continue? (yes/y or no/n): ").lower()
+    if choice == "no" or choice == "n":
+        print("Goodbye!")
         break
