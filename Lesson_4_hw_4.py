@@ -6,3 +6,4 @@ list2 = list1[amount:]
 list3 = list1[:amount]
 new_list = [list3,list2]
 print(new_list)
+    
