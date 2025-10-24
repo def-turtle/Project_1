@@ -17,7 +17,7 @@ def second_index(user_input="Hello_World",letter1='a'):
         return user_list.find(letter1)+user_input_c
     else:
         print("Not Found")
-second_index("sims","s")
+second_index("simsdfsims","sims")
 assert second_index("sims", "s") == 3, 'Test1'
 assert second_index("find the river", "e") == 12, 'Test2'
 assert second_index("hi", "h") is None, 'Test3'
