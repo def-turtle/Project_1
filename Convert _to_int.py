@@ -6,6 +6,10 @@ cap_list = list(capitals)
 print(cap_list)
 while True:
     user_input = input("Enter an int name: ")
+    if user_input =="":
+        print("Please write the name of the int")
+        print("False")
+        continue
     if user_input[0].isdigit():
         print("The name cannot start with a number")
         print("False")
@@ -28,9 +32,7 @@ while True:
         print("The name can't have punctuation")
         print("False")
         continue
-    amount_of = list(user_input).count("_")
-    if amount_of>1:
-        print("The name cannot have more that one of '_'")
+    if "__" in user_input:
         print("False")
         continue
     if " " in user_input:
