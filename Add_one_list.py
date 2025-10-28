@@ -1,8 +1,8 @@
 def add_one(some_list):
     int_result = int(''.join(map(str, some_list)))+1
     new_list = list(map(int, str(int_result)))
-    return new_list
     print(new_list)
+    return new_list
 
 
 add_one([1,2,3,4])
