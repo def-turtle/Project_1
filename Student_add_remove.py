@@ -26,13 +26,10 @@ class Group:
         self.number = number
         self.amount = 0
         self.students = []
-    def add(self, last_name):
-        student = students.get(last_name)
-        if not student:
+    def add(self, person):
+        if person in self.students:
             return None
-        if student in self.students:
-            return None
-        self.students.append(student)
+        self.students.append(person)
         self.amount += 1
     def remove(self, last_name):
         student1 = None
@@ -60,14 +57,13 @@ class Group:
 st1 = Student('Male', 30, 'Steve', 'Jobs', 'AN142')
 st2 = Student('Female', 25, 'Liza', 'Taylor', 'AN145')
 gr = Group('PD1')
-gr.add("Jobs")
-gr.add("Taylor")
+gr.add(st1)
+gr.add(st2)
+print(gr.find("Jobs"))
 print(gr)
-assert str(gr.find('Jobs')) == str(st1), 'Test1'
-assert gr.find('Jobs2') is None, 'Test2'
-assert isinstance(gr.find('Jobs'), Student) is True
+assert gr.find("Jobs") == st1
+
+assert gr.find('Jobs2') is None
 
 gr.remove('Taylor')
-print(gr)  # Only one student
-
-gr.remove('Taylor')  # No error!
+print(gr) # Only one student
