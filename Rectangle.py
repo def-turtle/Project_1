@@ -24,7 +24,6 @@ class Rectangle:
     def __str__(self):
         return str(self.get_square())
 
-
 r1 = Rectangle(2, 4)
 r2 = Rectangle(3, 6)
 assert r1.get_square() == 8, 'Test1'
