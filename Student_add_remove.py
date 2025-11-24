@@ -27,6 +27,9 @@ class Group:
         self.amount = 0
         self.students = []
     def add(self, person):
+        if len(self.students) >= 3:
+            # print("You can't add more than 10 students")
+            return "you can't add more than 10 students."
         if person in self.students:
             return None
         self.students.append(person)
@@ -56,7 +59,13 @@ class Group:
         return f"The Group number: {self.number}, Amount of people: {self.amount} students: {students}"
 st1 = Student('Male', 30, 'Steve', 'Jobs', 'AN142')
 st2 = Student('Female', 25, 'Liza', 'Taylor', 'AN145')
+st3 = Student('Male', 30, 'Michael', 'Jordan', 'AN142')
+st4 = Student('Male', 30, 'Oskar', 'Jackson', 'AN142')
 gr = Group('PD1')
+gr.add(st1)
+gr.add(st2)
+gr.add(st3)
+gr.add(st4)
 gr.add(st1)
 gr.add(st2)
 print(gr.find("Jobs"))
